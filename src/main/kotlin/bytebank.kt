@@ -1,11 +1,11 @@
 fun main() {
     println("Bem vindo ao Bytebank")
 
-    val contaAlex = Conta("Alex", 1000)
+    val contaAlex = Conta(titular="Alex", numero= 1000)
     contaAlex.deposita(200.0)
 
 
-    val contaFran = Conta("Fran", 1001)
+    val contaFran = Conta(numero=1001, titular = "Fran")
     contaFran.deposita(300.0)
 
     println(contaFran.titular)
@@ -51,7 +51,7 @@ fun main() {
 //    println(contaFran.saldo)
 }
 
-class Conta(var titular: String, var numero: Int) {
+class Conta(var titular: String, val numero: Int) {
     var saldo = 0.0
         private set
 //    constructor(titular:String, numero:Int){
